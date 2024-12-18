@@ -1,7 +1,6 @@
-schemaVersion: 2.3.0
+schemaVersion: 2.1.0
 metadata:
   name: zosconnect-empty-project
-  version: 2.0.0
 attributes:
   controller.devfile.io/storage-type: ephemeral
 projects:
@@ -12,22 +11,17 @@ projects:
         origin: 'https://github.com/charleeboyle/zosconnect-empty-project.git'
     name: zosconnect-empty-project
 components:
-  - name: zosconnect
-    container:
-      endpoints:
-        - exposure: public
-          name: zc-ui-http
-          path: /zosConnect/designer/
-          protocol: http
-          targetPort: 9080
-        - exposure: public
-          name: zc-ui-https
-          path: /zosConnect/designer
-          protocol: https
-          targetPort: 9080
-      env:
-        - name: ZCON_DESIGNER_PROJECT
-          value: /projects/zosconnect-empty-project/apiProject
-      image: 'icr.io/zosconnect/ibm-zcon-designer:3.0.88'
-      memoryLimit: 4927M
-      mountSources: true
+    - name: zosconnect
+      container:
+        endpoints:
+          - exposure: public
+            name: zosconnect-ui
+            path: /zosConnect/designer/
+            protocol: http
+            targetPort: 9080
+        env:
+          - name: ZCON_DESIGNER_PROJECT
+            value: /projects/zosconnect-empty-project/apiProject
+        image: 'icr.io/zosconnect/ibm-zcon-designer:3.0.88'
+        memoryLimit: 4927M
+        mountSources: true
