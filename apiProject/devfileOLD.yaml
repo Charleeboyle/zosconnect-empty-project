@@ -11,10 +11,6 @@ projects:
         origin: 'https://github.com/charleeboyle/zosconnect-empty-project.git'
     name: zosconnect-empty-project
 components:
-    - name: tools
-      container:
-        image: registry.redhat.io/devspaces/udi-rhel8:latest
-        memoryLimit: 3Gi
     - name: zosconnect
       container:
         endpoints:
