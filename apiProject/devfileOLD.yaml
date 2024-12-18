@@ -8,7 +8,7 @@ projects:
       checkoutFrom:
         revision: main
       remotes:
-        origin: 'https://github.com/charleeboyle/zosconnect-empty-project.git.git'
+        origin: 'https://github.com/charleeboyle/zosconnect-empty-project.git'
     name: zosconnect-empty-project
 components:
     - name: zosconnect
